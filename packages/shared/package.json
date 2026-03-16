@@ -1,0 +1,26 @@
+{
+	"name": "@repo/shared",
+	"type": "module",
+	"types": "./dist/index.d.mts",
+	"devDependencies": {
+		"@repo/typescript-config": "workspace:*",
+		"@types/bun": "latest",
+		"@types/node": "^25.5.0"
+	},
+	"scripts": {
+		"build": "tsdown",
+		"watch": "tsdown --watch",
+		"lint": "biome check"
+	},
+	"exports": {
+		".": "./dist/index.mjs",
+		"./env": "./dist/env/index.mjs",
+		"./query/client": "./dist/query/client.mjs",
+		"./package.json": "./package.json"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^5.90.21",
+		"tsx": "^4.21.0",
+		"zod": "^4.3.6"
+	}
+}
