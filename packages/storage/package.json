@@ -5,8 +5,8 @@
 	"devDependencies": {
 		"@repo/typescript-config": "workspace:*",
 		"@types/bun": "latest",
-		"drizzle-kit": "^0.31.9",
-		"tsx": "^4.21.0"
+		"drizzle-kit": "^0.31.10",
+		"tsx": "^4.22.3"
 	},
 	"scripts": {
 		"build": "tsdown",
@@ -23,8 +23,8 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"@neondatabase/serverless": "^1.0.2",
+		"@neondatabase/serverless": "^1.1.0",
 		"@repo/shared": "workspace:*",
-		"drizzle-orm": "^0.45.1"
+		"drizzle-orm": "^0.45.2"
 	}
 }
