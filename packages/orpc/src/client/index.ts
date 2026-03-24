@@ -1,5 +1,4 @@
 import { createORPCClient } from "@orpc/client";
-import { RPCLink } from "@orpc/client/fetch";
 import type { RouterClient } from "@orpc/server";
 import { env } from "@repo/shared";
 import { SuperJSONLink } from "#/routers/middleware/superjson/link";

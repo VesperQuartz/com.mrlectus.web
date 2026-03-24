@@ -21,6 +21,7 @@ export const getRouter = () => {
 		scrollRestoration: true,
 		context: { ...rqContext },
 		defaultPreload: "intent",
+		defaultPreloadStaleTime: 0,
 		defaultErrorComponent: DefaultCatchBoundary,
 		defaultNotFoundComponent: () => {
 			return <NotFound />;

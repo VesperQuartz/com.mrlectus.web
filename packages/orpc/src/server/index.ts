@@ -1,4 +1,3 @@
-import { OpenAPIHandler } from "@orpc/openapi/fetch";
 import { OpenAPIReferencePlugin } from "@orpc/openapi/plugins";
 import { onError } from "@orpc/server";
 import { CompressionPlugin, RPCHandler } from "@orpc/server/fetch";

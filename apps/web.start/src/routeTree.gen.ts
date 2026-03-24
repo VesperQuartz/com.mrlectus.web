@@ -10,13 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as dashboardRouteRouteImport } from './routes/(dashboard)/route'
-import { Route as dashboardIndexRouteImport } from './routes/(dashboard)/index'
 import { Route as authLoginRouteImport } from './routes/(auth)/login'
-import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc/$'
+import { Route as dashboardIndexRouteImport } from './routes/(dashboard)/index'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc/$'
 
 const dashboardRouteRoute = dashboardRouteRouteImport.update({
   id: '/(dashboard)',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const authLoginRoute = authLoginRouteImport.update({
+  id: '/(auth)/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const dashboardIndexRoute = dashboardIndexRouteImport.update({
@@ -24,19 +29,14 @@ const dashboardIndexRoute = dashboardIndexRouteImport.update({
   path: '/',
   getParentRoute: () => dashboardRouteRoute,
 } as any)
-const authLoginRoute = authLoginRouteImport.update({
-  id: '/(auth)/login',
-  path: '/login',
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiRpcSplatRoute = ApiRpcSplatRouteImport.update({
   id: '/api/rpc/$',
   path: '/api/rpc/$',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
-  id: '/api/auth/$',
-  path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -90,13 +90,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof dashboardRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/(dashboard)/': {
-      id: '/(dashboard)/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof dashboardIndexRouteImport
-      parentRoute: typeof dashboardRouteRoute
-    }
     '/(auth)/login': {
       id: '/(auth)/login'
       path: '/login'
@@ -104,18 +97,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof authLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/rpc/$': {
-      id: '/api/rpc/$'
-      path: '/api/rpc/$'
-      fullPath: '/api/rpc/$'
-      preLoaderRoute: typeof ApiRpcSplatRouteImport
-      parentRoute: typeof rootRouteImport
+    '/(dashboard)/': {
+      id: '/(dashboard)/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof dashboardIndexRouteImport
+      parentRoute: typeof dashboardRouteRoute
     }
     '/api/auth/$': {
       id: '/api/auth/$'
       path: '/api/auth/$'
       fullPath: '/api/auth/$'
       preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/rpc/$': {
+      id: '/api/rpc/$'
+      path: '/api/rpc/$'
+      fullPath: '/api/rpc/$'
+      preLoaderRoute: typeof ApiRpcSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
   }

@@ -5,8 +5,8 @@
 	"devDependencies": {
 		"@repo/typescript-config": "workspace:*",
 		"@types/bun": "latest",
-		"@types/node": "^25.5.0",
-		"typescript": "5.9.3"
+		"@types/node": "^26.2.0",
+		"typescript": "7.0.2"
 	},
 	"scripts": {
 		"lint": "biome check",
@@ -31,18 +31,18 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"@orpc/client": "^1.13.7",
-		"@orpc/openapi": "^1.13.7",
-		"@orpc/openapi-client": "^1.13.7",
-		"@orpc/server": "^1.13.7",
-		"@orpc/shared": "^1.13.9",
-		"@orpc/zod": "^1.13.7",
+		"@orpc/client": "^1.15.0",
+		"@orpc/openapi": "^1.15.0",
+		"@orpc/openapi-client": "^1.15.0",
+		"@orpc/server": "^1.15.0",
+		"@orpc/shared": "^1.15.0",
+		"@orpc/zod": "^1.15.0",
 		"@repo/auth": "workspace:*",
 		"@repo/shared": "workspace:*",
-		"expo": "^55.0.6",
-		"expo-constants": "~55.0.7",
+		"expo": "^57.0.14",
+		"expo-constants": "~57.0.12",
 		"superjson": "^2.2.6",
 		"ts-pattern": "^5.9.0",
-		"zod": "^4.3.6"
+		"zod": "^4.4.3"
 	}
 }

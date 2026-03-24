@@ -1,5 +1,5 @@
 import { db } from "@repo/storage";
-import { betterAuth } from "better-auth";
+import { type BetterAuthOptions, betterAuth } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import {
 	admin as adminPlugin,
@@ -10,7 +10,7 @@ import {
 import { tanstackStartCookies } from "better-auth/tanstack-start";
 import { ac, adminRole, customRole, userRole } from "./permission";
 
-export const auth = betterAuth({
+const authOptions: BetterAuthOptions = {
 	database: drizzleAdapter(db, {
 		provider: "pg",
 	}),
@@ -44,4 +44,10 @@ export const auth = betterAuth({
 		}),
 		tanstackStartCookies(),
 	],
-});
+} satisfies BetterAuthOptions;
+
+export const auth = betterAuth(authOptions) as ReturnType<
+	typeof betterAuth<typeof authOptions>
+>;
+
+export type Session = typeof auth.$Infer.Session;
