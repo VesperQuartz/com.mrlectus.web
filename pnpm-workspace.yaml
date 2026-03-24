@@ -1,3 +1,13 @@
 packages:
   - "apps/*"
   - "packages/*"
+minimumReleaseAgeStrict: true
+allowBuilds:
+  esbuild: true
+  msgpackr-extract: true
+  msw: true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - '@base-ui/react@1.6.0'
+  - '@base-ui/utils@0.3.1'
+  - '@types/node@26.0.0'
