@@ -1,7 +1,7 @@
 import { os } from "@orpc/server";
 import type {
-	RequestHeadersPluginContext,
-	ResponseHeadersPluginContext,
+  RequestHeadersPluginContext,
+  ResponseHeadersPluginContext,
 } from "@orpc/server/plugins";
 
 type ORPCContext = RequestHeadersPluginContext & ResponseHeadersPluginContext;
