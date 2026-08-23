@@ -20,9 +20,10 @@
 		"@types/bun": "latest"
 	},
 	"dependencies": {
-		"@better-auth/drizzle-adapter": "^1.7.1",
+		"@better-auth/drizzle-adapter": "^1.7.4",
 		"@repo/shared": "workspace:*",
 		"@repo/storage": "workspace:*",
-		"better-auth": "^1.7.1"
+		"better-auth": "^1.7.4",
+		"better-result": "^3.0.1"
 	}
 }

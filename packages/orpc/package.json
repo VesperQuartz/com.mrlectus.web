@@ -5,7 +5,7 @@
 	"devDependencies": {
 		"@repo/typescript-config": "workspace:*",
 		"@types/bun": "latest",
-		"@types/node": "^26.2.0",
+		"@types/node": "^26.4.1",
 		"typescript": "7.0.2"
 	},
 	"scripts": {
@@ -39,10 +39,11 @@
 		"@orpc/zod": "^1.15.0",
 		"@repo/auth": "workspace:*",
 		"@repo/shared": "workspace:*",
-		"expo": "^57.0.14",
-		"expo-constants": "~57.0.12",
+		"better-result": "^3.0.1",
+		"expo": "^57.0.22",
+		"expo-constants": "~57.0.18",
 		"superjson": "^2.2.6",
 		"ts-pattern": "^5.9.0",
-		"zod": "^4.4.3"
+		"zod": "^4.6.2"
 	}
 }
